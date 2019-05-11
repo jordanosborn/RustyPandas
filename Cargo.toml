@@ -1,0 +1,14 @@
+[package]
+name = "mathpack"
+version = "0.1.0"
+authors = ["Jordan Osborn <jordanosborn0@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+nalgebra = "0.18.0"
+rayon = "1.0.3"
+serde = "1.0.91"
+gnuplot = "0.0.31"
+itertools = "0.8.0"
+num = "0.2.0"
+
