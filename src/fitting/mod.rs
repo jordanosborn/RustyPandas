@@ -11,6 +11,19 @@ pub fn least_squares(f: Function, params: Vec<f64>, vars: Vec<Vec<f64>>, y: Vec<
         .map(|(x, y)| (y - f(x, &params).powf(2.0)))
         .sum()
 }
+pub fn weighted_least_squares(
+    f: Function,
+    params: Vec<f64>,
+    vars: Vec<Vec<f64>>,
+    y: Vec<f64>,
+    weights: Vec<f64>,
+) -> f64 {
+    vars.par_iter()
+        .zip(y.par_iter())
+        .zip(weights.par_iter())
+        .map(|((x, y), w)| w * (y - f(x, &params).powf(2.0)))
+        .sum()
+}
 
 pub fn fit(
     f: Function,
