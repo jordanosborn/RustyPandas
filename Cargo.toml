@@ -3,6 +3,9 @@ name = "mathpack"
 version = "0.1.0"
 authors = ["Jordan Osborn <jordanosborn0@gmail.com>"]
 edition = "2018"
+license = "MIT"
+description = "General Mathematics Library for Rust"
+website = "https://github.com/jordanosborn/mathpack"
 
 [dependencies]
 nalgebra = "0.18.0"
