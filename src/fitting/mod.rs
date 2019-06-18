@@ -1,6 +1,6 @@
 #![allow(dead_code)]
 
-use crate::calculus::*;
+use crate::calculus::differentiation::*;
 use crate::Function;
 use rayon::prelude::*;
 type Cost = fn(Function, Vec<f64>, Vec<Vec<f64>>, Vec<f64>) -> f64;
@@ -26,11 +26,11 @@ pub fn fit(
         least_squares
     };
     //Use diff to minimise cost
-
 }
 
 #[cfg(test)]
 mod tests {
+    #[allow(unused_imports)]
     use super::*;
     #[test]
     fn test_linear() {}

@@ -1,7 +1,5 @@
 #![allow(dead_code)]
 
-use crate::linalg::Vector;
-use crate::Function;
 pub fn diff(f: fn(&Vec<f64>) -> f64, position: Vec<f64>, step: f64) -> Vec<f64> {
     let mut ret = Vec::with_capacity(position.len());
     for i in 0..position.len() {
