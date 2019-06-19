@@ -10,6 +10,9 @@ homepage = "https://github.com/jordanosborn/mathpack"
 repository = "https://github.com/jordanosborn/mathpack"
 readme = "README.md"
 
+[profile.test]
+opt-level = 3
+
 [dependencies]
 nalgebra = "0.18.0"
 rayon = "1.1.0"

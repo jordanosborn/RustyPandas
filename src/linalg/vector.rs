@@ -1,7 +1,15 @@
 use rayon::prelude::*;
-#[derive(Clone)]
+#[derive(Debug)]
 pub struct Vector {
     pub data: Vec<f64>,
+}
+
+impl Clone for Vector {
+    fn clone(&self) -> Self {
+        Vector {
+            data: self.data.clone(),
+        }
+    }
 }
 
 impl std::ops::Index<usize> for Vector {
@@ -18,8 +26,28 @@ impl std::ops::IndexMut<usize> for Vector {
 }
 
 impl Vector {
-    pub fn len(self) -> usize {
+    #[allow(clippy::ptr_arg)]
+    pub fn from(v: &Vec<f64>) -> Vector {
+        Vector { data: v.clone() }
+    }
+    pub fn len(&self) -> usize {
         self.data.len()
+    }
+
+    pub fn norm(&self) -> f64 {
+        let out: f64 = self
+            .data
+            .iter()
+            .zip(self.data.iter())
+            .map(|(a, b)| a * b)
+            .sum();
+        out.sqrt()
+    }
+    pub fn unit(&self) -> Vector {
+        let norm = self.norm();
+        Vector {
+            data: self.data.iter().map(|a| a / norm).collect(),
+        }
     }
 }
 
@@ -32,6 +60,15 @@ impl std::ops::Mul<Vector> for Vector {
             .zip(rhs.data.iter())
             .map(|(a, b)| a * b)
             .sum()
+    }
+}
+
+impl std::ops::Div<f64> for Vector {
+    type Output = Self;
+    fn div(self, rhs: f64) -> Self::Output {
+        Vector {
+            data: self.data.iter().map(|a| a / rhs).collect(),
+        }
     }
 }
 

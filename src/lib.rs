@@ -1,3 +1,4 @@
-mod calculus;
-mod fitting;
-mod linalg;
+pub mod calculus;
+pub mod constants;
+pub mod linalg;
+pub mod statistics;
