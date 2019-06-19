@@ -6,6 +6,12 @@ matrix:
     - rust: nightly
   fast_finish: true
 cache: cargo
+before_script:
+  - RUSTFLAGS="--cfg procmacro2_semver_exempt" cargo install cargo-tarpaulin -f
+  - rustup component add clippy
 script:
   - cargo build --verbose --all
   - cargo test --verbose --all
+  - cargo clippy --all-targets --all-features -- -D warnings
+after_success:
+  cargo tarpaulin --ciserver travis-ci --coveralls $TRAVIS_JOB_ID
