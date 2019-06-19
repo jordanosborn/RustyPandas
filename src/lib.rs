@@ -1,9 +1,9 @@
+#![allow(unused_macros)]
 pub mod calculus;
 pub mod constants;
 pub mod linalg;
 pub mod statistics;
 
-#[allow(unused_macros)]
 #[macro_export]
 macro_rules! create_equality_test {
     ($name: ident, $f: expr, $( $var:expr ),* => $eq: expr) => {
@@ -14,7 +14,6 @@ macro_rules! create_equality_test {
     };
 }
 
-#[allow(unused_macros)]
 #[macro_export]
 macro_rules! create_inequality_test {
     ($name: ident, $f: expr, $( $var:expr ),* => $eq: expr) => {
@@ -25,7 +24,6 @@ macro_rules! create_inequality_test {
     };
 }
 
-#[allow(unused_macros)]
 #[macro_export]
 macro_rules! create_panic_test {
     ($name: ident, $f: expr, $( $var:expr ),*) => {
