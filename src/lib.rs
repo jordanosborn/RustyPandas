@@ -1,8 +1,10 @@
 #![allow(unused_macros)]
+#![deny(clippy::all, clippy::pedantic)]
 pub mod calculus;
 pub mod constants;
 pub mod linalg;
 pub mod statistics;
+pub mod types;
 
 #[macro_export]
 macro_rules! create_equality_test {

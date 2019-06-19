@@ -1,3 +1,4 @@
+#![allow(clippy::use_self)]
 #[allow(unused_macros)]
 macro_rules! new_matrix {
     ($x: ident, $m: expr, $n: expr) => {

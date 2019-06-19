@@ -6,7 +6,7 @@ pub struct Vector {
 
 impl Clone for Vector {
     fn clone(&self) -> Self {
-        Vector {
+        Self {
             data: self.data.clone(),
         }
     }
@@ -27,8 +27,8 @@ impl std::ops::IndexMut<usize> for Vector {
 
 impl Vector {
     #[allow(clippy::ptr_arg)]
-    pub fn from(v: &Vec<f64>) -> Vector {
-        Vector { data: v.clone() }
+    pub fn from(v: &Vec<f64>) -> Self {
+        Self { data: v.clone() }
     }
     pub fn len(&self) -> usize {
         self.data.len()
@@ -47,9 +47,9 @@ impl Vector {
             .sum();
         out.sqrt()
     }
-    pub fn unit(&self) -> Vector {
+    pub fn unit(&self) -> Self {
         let norm = self.norm();
-        Vector {
+        Self {
             data: self.data.iter().map(|a| a / norm).collect(),
         }
     }
@@ -70,16 +70,16 @@ impl std::ops::Mul<Vector> for Vector {
 impl std::ops::Div<f64> for Vector {
     type Output = Self;
     fn div(self, rhs: f64) -> Self::Output {
-        Vector {
+        Self {
             data: self.data.iter().map(|a| a / rhs).collect(),
         }
     }
 }
 
 impl std::ops::Add<Vector> for Vector {
-    type Output = Vector;
+    type Output = Self;
     fn add(self, rhs: Self) -> Self::Output {
-        Vector {
+        Self {
             data: self
                 .data
                 .iter()
@@ -90,9 +90,9 @@ impl std::ops::Add<Vector> for Vector {
     }
 }
 impl std::ops::Sub<Vector> for Vector {
-    type Output = Vector;
+    type Output = Self;
     fn sub(self, rhs: Self) -> Self::Output {
-        Vector {
+        Self {
             data: self
                 .data
                 .iter()
@@ -113,10 +113,10 @@ impl std::ops::Mul<Vector> for f64 {
 }
 
 impl std::ops::BitXor<Vector> for Vector {
-    type Output = Vector;
-    fn bitxor(self, rhs: Vector) -> Self::Output {
+    type Output = Self;
+    fn bitxor(self, rhs: Self) -> Self::Output {
         assert!(rhs.data.len() == 3 && self.data.len() == 3);
-        Vector {
+        Self {
             data: vec![
                 self.data[1] * rhs.data[2] - self.data[2] * rhs.data[1],
                 self.data[2] * rhs.data[0] - self.data[0] * rhs.data[2],
