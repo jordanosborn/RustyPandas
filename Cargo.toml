@@ -20,3 +20,6 @@ serde = "1.0.92"
 gnuplot = "0.0.31"
 itertools = "0.8.0"
 num = "0.2.0"
+rand = "0.6.5"
+
+[dev-dependencies]
