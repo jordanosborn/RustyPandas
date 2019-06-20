@@ -17,6 +17,24 @@ macro_rules! create_equality_test {
 }
 
 #[macro_export]
+macro_rules! create_approx_test {
+    ($name: ident, $f: expr, $( $var:expr ),* => $eq: expr , $tol: expr) => {
+        #[test]
+        fn $name() {
+            let out = $f($($var),*);
+            assert!((out - $eq).abs() < $tol);
+        }
+    };
+    ($name: ident, $f: expr, $( $var:expr ),* => $eq: expr) => {
+        #[test]
+        fn $name() {
+            let out = $f($($var),*);
+            assert!((out - $eq).abs() < 0.0001);
+        }
+    };
+}
+
+#[macro_export]
 macro_rules! create_inequality_test {
     ($name: ident, $f: expr, $( $var:expr ),* => $eq: expr) => {
         #[test]
