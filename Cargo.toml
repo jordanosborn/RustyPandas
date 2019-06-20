@@ -1,6 +1,6 @@
 [package]
 name = "mathpack"
-version = "0.1.2"
+version = "0.1.3"
 authors = ["Jordan Osborn <jordanosborn0@gmail.com>"]
 edition = "2018"
 license = "MIT"
@@ -10,7 +10,7 @@ homepage = "https://github.com/jordanosborn/mathpack"
 repository = "https://github.com/jordanosborn/mathpack"
 readme = "README.md"
 
-[profile.test]
+[profile.dev]
 opt-level = 3
 
 [dependencies]

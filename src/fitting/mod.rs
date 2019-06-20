@@ -4,13 +4,13 @@ use itertools::Itertools;
 
 use crate::calculus::differentiation::*;
 use crate::linalg::vector::Vector;
-type Function<'a> = &'a dyn Fn(&Vec<f64>, &Vec<f64>) -> f64;
-type Cost<'a> =
-    &'a dyn Fn(&dyn Fn(&Vec<f64>, &Vec<f64>) -> f64, Vec<f64>, &[Vec<f64>], &[f64]) -> f64;
+type Function<'a> = &'a dyn Fn(&[f64], &[f64]) -> f64;
+type Cost<'a> = &'a dyn Fn(&dyn Fn(&[f64], &[f64]) -> f64, &[f64], &[Vec<f64>], &[f64]) -> f64;
 type CostWeighted<'a> =
-    &'a Fn(&dyn Fn(&Vec<f64>, &Vec<f64>) -> f64, Vec<f64>, &[Vec<f64>], &[f64], Vec<f64>) -> f64;
+    &'a Fn(&dyn Fn(&[f64], &[f64]) -> f64, &[f64], &[Vec<f64>], &[f64], &[f64]) -> f64;
 
-pub fn least_squares(f: Function, params: Vec<f64>, vars: &[Vec<f64>], y: &[f64]) -> f64 {
+pub fn least_squares(f: Function, params: &[f64], vars: &[Vec<f64>], y: &[f64]) -> f64 {
+    #[allow(clippy::cast_precision_loss)]
     vars.iter()
         .zip(y.iter())
         .map(|(x, y)| (y - f(x, &params)).powf(2.0))
@@ -19,10 +19,10 @@ pub fn least_squares(f: Function, params: Vec<f64>, vars: &[Vec<f64>], y: &[f64]
 }
 pub fn weighted_least_squares(
     f: Function,
-    params: Vec<f64>,
+    params: &[f64],
     vars: &[Vec<f64>],
     y: &[f64],
-    weights: Vec<f64>,
+    weights: &[f64],
 ) -> f64 {
     vars.iter()
         .zip(y.iter())
@@ -36,7 +36,7 @@ pub fn fit_weighted(
     f: Function,
     vars: &[Vec<f64>],
     y: &[f64],
-    weights: Vec<f64>,
+    weights: &[f64],
     bounds: (Vec<f64>, Vec<f64>),
     cost_function: Option<CostWeighted>,
     threshold: Option<f64>,
@@ -44,8 +44,7 @@ pub fn fit_weighted(
     iterations: Option<usize>,
 ) -> (Vec<f64>, f64) {
     let cost_function = cost_function.unwrap_or(&weighted_least_squares);
-    let cost_func: Cost =
-        &(|f, params, vars, y| cost_function(f, params, vars, y, weights.to_owned()));
+    let cost_func: Cost = &(|f, params, vars, y| cost_function(f, params, vars, y, weights));
     fit(
         f,
         vars,
@@ -74,7 +73,7 @@ pub fn fit(
     let eta = learning_rates.0.unwrap_or(0.1);
     let gamma = learning_rates.1.unwrap_or(0.9);
     let iterations = iterations.unwrap_or(100_000);
-    let cost_function_params = |params: &Vec<f64>| cost_function(f, params.to_vec(), vars, y);
+    let cost_function_params = |params: &Vec<f64>| cost_function(f, params, vars, y);
     //Use diff to minimise cost
     let mut params = bounds.0;
 
@@ -113,7 +112,7 @@ mod tests {
             .map(|x| 5.0 * x.powf(2.0) + 2.0 * x + -8.0)
             .collect();
         let bounds = (vec![-10.0, -10.0, -10.0], vec![100.0, 100.0, 100.0]);
-        let f = &(|vars: &Vec<f64>, params: &Vec<f64>| {
+        let f = &(|vars: &[f64], params: &[f64]| {
             params[0] * vars[0].powf(2.0) + params[1] * vars[0] + params[2]
         });
         println!(
@@ -132,8 +131,8 @@ mod tests {
             .map(|(x, y)| (f64::from(x), f64::from(y)))
             .map(|(x, y)| 2.0 * x.powf(2.0) + 3.0 * y.powf(2.0))
             .collect();
-        let bounds = (vec![-10.0, -10.0], vec![100.0, 100.0]);
-        let f = &(|vars: &Vec<f64>, params: &Vec<f64>| {
+        let bounds = (vec![-10.0, -10.0], vec![50.0, 50.0]);
+        let f = &(|vars: &[f64], params: &[f64]| {
             params[0] * vars[0].powf(2.0) + params[1] * vars[1].powf(2.0)
         });
         println!(

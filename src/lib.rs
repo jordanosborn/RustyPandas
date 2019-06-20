@@ -2,9 +2,11 @@
 #![deny(clippy::all, clippy::pedantic)]
 pub mod calculus;
 pub mod constants;
-pub mod linalg;
+pub mod fitting;
 pub mod statistics;
+pub mod linalg;
 pub mod types;
+
 
 #[macro_export]
 macro_rules! equality_test {
