@@ -7,7 +7,7 @@ pub mod statistics;
 pub mod types;
 
 #[macro_export]
-macro_rules! create_equality_test {
+macro_rules! equality_test {
     ($name: ident, $f: expr, $( $var:expr ),* => $eq: expr) => {
         #[test]
         fn $name() {
@@ -17,7 +17,7 @@ macro_rules! create_equality_test {
 }
 
 #[macro_export]
-macro_rules! create_approx_test {
+macro_rules! abs_approx_test {
     ($name: ident, $f: expr, $( $var:expr ),* => $eq: expr , $tol: expr) => {
         #[test]
         fn $name() {
@@ -35,7 +35,7 @@ macro_rules! create_approx_test {
 }
 
 #[macro_export]
-macro_rules! create_inequality_test {
+macro_rules! inequality_test {
     ($name: ident, $f: expr, $( $var:expr ),* => $eq: expr) => {
         #[test]
         fn $name() {
@@ -45,7 +45,7 @@ macro_rules! create_inequality_test {
 }
 
 #[macro_export]
-macro_rules! create_panic_test {
+macro_rules! panic_test {
     ($name: ident, $f: expr, $( $var:expr ),*) => {
         #[test]
         #[should_panic]
