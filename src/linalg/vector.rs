@@ -26,9 +26,8 @@ impl std::ops::IndexMut<usize> for Vector {
 }
 
 impl Vector {
-    #[allow(clippy::ptr_arg)]
-    pub fn from(v: &Vec<f64>) -> Self {
-        Self { data: v.clone() }
+    pub fn from(v: &[f64]) -> Self {
+        Self { data: v.to_vec() }
     }
     pub fn len(&self) -> usize {
         self.data.len()

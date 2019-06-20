@@ -128,10 +128,11 @@ mod tests {
             .collect();
         let y: Vec<f64> = (0..20)
             .cartesian_product(0..20)
-            .map(|(x, y)| (f64::from(x), f64::from(y)))
-            .map(|(x, y)| 2.0 * x.powf(2.0) + 3.0 * y.powf(2.0))
+            .cartesian_product(0..20)
+            .map(|((x, y), z)| (f64::from(x), f64::from(y), f64::from(z)))
+            .map(|(x, y, z)| 2.0 * x.powf(2.0) + 3.0 * y.powf(2.0) + 4.0 * z.powf(2.0))
             .collect();
-        let bounds = (vec![-10.0, -10.0], vec![50.0, 50.0]);
+        let bounds = (vec![-10.0, -10.0, - 10.0], vec![50.0, 50.0, 50.0]);
         let f = &(|vars: &[f64], params: &[f64]| {
             params[0] * vars[0].powf(2.0) + params[1] * vars[1].powf(2.0)
         });
