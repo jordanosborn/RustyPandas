@@ -1,6 +1,6 @@
 [package]
 name = "mathpack"
-version = "0.1.5"
+version = "0.1.6"
 authors = ["Jordan Osborn <jordanosborn0@gmail.com>"]
 edition = "2018"
 license = "MIT"

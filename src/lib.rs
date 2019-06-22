@@ -1,12 +1,13 @@
 #![allow(unused_macros)]
 #![deny(clippy::all, clippy::pedantic)]
+
 pub mod calculus;
 pub mod constants;
 pub mod fitting;
+pub mod functions;
 pub mod statistics;
 pub mod linalg;
 pub mod types;
-
 
 #[macro_export]
 macro_rules! equality_test {
