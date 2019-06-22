@@ -4,9 +4,9 @@ use itertools::Itertools;
 
 use crate::calculus::differentiation::*;
 use crate::linalg::vector::Vector;
-type Function<'a> = &'a dyn Fn(&[f64], &[f64]) -> f64;
-type Cost<'a> = &'a dyn Fn(&dyn Fn(&[f64], &[f64]) -> f64, &[f64], &[Vec<f64>], &[f64]) -> f64;
-type CostWeighted<'a> =
+pub type Function<'a> = &'a dyn Fn(&[f64], &[f64]) -> f64;
+pub type Cost<'a> = &'a dyn Fn(&dyn Fn(&[f64], &[f64]) -> f64, &[f64], &[Vec<f64>], &[f64]) -> f64;
+pub type CostWeighted<'a> =
     &'a Fn(&dyn Fn(&[f64], &[f64]) -> f64, &[f64], &[Vec<f64>], &[f64], &[f64]) -> f64;
 
 pub fn least_squares(f: Function, params: &[f64], vars: &[Vec<f64>], y: &[f64]) -> f64 {
@@ -132,7 +132,7 @@ mod tests {
             .map(|((x, y), z)| (f64::from(x), f64::from(y), f64::from(z)))
             .map(|(x, y, z)| 2.0 * x.powf(2.0) + 3.0 * y.powf(2.0) + 4.0 * z.powf(2.0))
             .collect();
-        let bounds = (vec![-10.0, -10.0, - 10.0], vec![50.0, 50.0, 50.0]);
+        let bounds = (vec![-10.0, -10.0, -10.0], vec![50.0, 50.0, 50.0]);
         let f = &(|vars: &[f64], params: &[f64]| {
             params[0] * vars[0].powf(2.0) + params[1] * vars[1].powf(2.0)
         });
