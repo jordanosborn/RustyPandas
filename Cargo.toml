@@ -1,6 +1,6 @@
 [package]
 name = "mathpack"
-version = "0.1.6"
+version = "0.1.7"
 authors = ["Jordan Osborn <jordanosborn0@gmail.com>"]
 edition = "2018"
 license = "MIT"
@@ -21,5 +21,6 @@ gnuplot = "0.0.31"
 itertools = "0.8.0"
 num = "0.2.0"
 rand = "0.6.5"
+text_io = "0.1.7"
 
 [dev-dependencies]
