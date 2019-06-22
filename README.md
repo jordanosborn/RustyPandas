@@ -22,9 +22,11 @@ Will eventually contain most common mathematical utilities:
 1. Big integers and floats
 1. Complex numbers
 1. Fixed Point mathematics
-1. Integration
+1. Integration - Calculus
 1. ODE Solvers
 1. Graphing
 1. Statistical methods
 1. Machine learning, deep learning
+1. Geometry
+1. Maths frontend
 1. etc.
