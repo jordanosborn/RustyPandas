@@ -28,5 +28,7 @@ Will eventually contain most common mathematical utilities:
 1. Statistical methods
 1. Machine learning, deep learning
 1. Geometry
+1. Data scraping
+1. GPU support
 1. Maths frontend
 1. etc.
