@@ -24,10 +24,12 @@ pub fn weighted_least_squares(
     y: &[f64],
     weights: &[f64],
 ) -> f64 {
+    #[allow(clippy::cast_precision_loss)]
     vars.iter()
         .zip(y.iter())
         .zip(weights.iter())
         .map(|((x, y), w)| w * (y - f(x, &params).powf(2.0)))
+        .map(|x| x / vars.len() as f64)
         .sum()
 }
 

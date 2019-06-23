@@ -1,3 +1,5 @@
+
+use num::Zero;
 use rayon::prelude::*;
 #[derive(Debug)]
 pub struct Vector {
@@ -48,9 +50,14 @@ impl Vector {
     }
     pub fn unit(&self) -> Self {
         let norm = self.norm();
-        Self {
-            data: self.data.iter().map(|a| a / norm).collect(),
+        if f64::is_zero(&norm) {
+            self.to_owned()
+        } else {
+            Self {
+                data: self.data.iter().map(|a| a / norm).collect(),
+            }
         }
+
     }
 }
 
