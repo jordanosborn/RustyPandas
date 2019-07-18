@@ -16,13 +16,14 @@ opt-level = 3
 [dependencies]
 nalgebra = "0.18.0"
 rayon = "1.1.0"
-serde = "1.0.92"
+serde = "1.0.97"
 gnuplot = "0.0.31"
 itertools = "0.8.0"
 num = "0.2.0"
-rand = "0.6.5"
+rand = "0.7.0"
 text_io = "0.1.7"
 sqlite = "0.25.0"
+approx = "0.3.2"
 #actix? for web frontend?
 
 [dev-dependencies]

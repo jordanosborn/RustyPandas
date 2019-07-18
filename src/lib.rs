@@ -1,12 +1,13 @@
 #![allow(unused_macros)]
+#![feature(const_generics)]
 #![deny(clippy::all, clippy::pedantic)]
 
 pub mod calculus;
 pub mod constants;
 pub mod fitting;
 pub mod functions;
-pub mod statistics;
 pub mod linalg;
+pub mod statistics;
 pub mod types;
 
 #[macro_export]

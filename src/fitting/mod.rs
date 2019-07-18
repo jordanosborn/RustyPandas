@@ -2,6 +2,8 @@
 #[allow(unused_imports)]
 use itertools::Itertools;
 
+pub mod levenberg_marquardt;
+
 use crate::calculus::differentiation::*;
 use crate::linalg::vector::Vector;
 pub type Function<'a> = &'a dyn Fn(&[f64], &[f64]) -> f64;
