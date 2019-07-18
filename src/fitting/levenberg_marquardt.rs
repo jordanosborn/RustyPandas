@@ -3,4 +3,4 @@ use crate::calculus::differentiation::diff;
 use crate::linalg;
 
 
-pub fn jacobian<const M: usize, const N: usize>(f: Function, x: &[f64; M], args: &[f64; N]) {}
+pub fn jacobian(f: Function, x: &[f64], args: &[f64]) {}

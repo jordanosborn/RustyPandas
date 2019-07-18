@@ -1,5 +1,5 @@
 #![allow(unused_macros)]
-#![feature(const_generics)]
+//#![feature(const_generics)]
 #![deny(clippy::all, clippy::pedantic)]
 
 pub mod calculus;

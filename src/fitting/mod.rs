@@ -1,13 +1,10 @@
-#![allow(dead_code)]
-#[allow(unused_imports)]
-use itertools::Itertools;
-
 pub mod levenberg_marquardt;
 
 use crate::calculus::differentiation::*;
 use crate::linalg::vector::Vector;
 pub type Function<'a> = &'a dyn Fn(&[f64], &[f64]) -> f64;
 pub type Cost<'a> = &'a dyn Fn(&dyn Fn(&[f64], &[f64]) -> f64, &[f64], &[Vec<f64>], &[f64]) -> f64;
+#[allow(bare_trait_objects)]
 pub type CostWeighted<'a> =
     &'a Fn(&dyn Fn(&[f64], &[f64]) -> f64, &[f64], &[Vec<f64>], &[f64], &[f64]) -> f64;
 
@@ -108,6 +105,7 @@ pub fn fit(
 mod tests {
     #[allow(unused_imports)]
     use super::*;
+    use itertools::Itertools;
     #[test]
     fn test_quadratic_fit() {
         let vars: Vec<Vec<f64>> = (0..20).map(f64::from).map(|x| vec![x]).collect();
