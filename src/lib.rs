@@ -1,4 +1,4 @@
-#![allow(unused_macros)]
+#![allow(unused_macros, unused_imports)]
 //#![feature(const_generics)]
 #![deny(clippy::all, clippy::pedantic)]
 
