@@ -1,0 +1,19 @@
+name: Rust
+
+on: [push, pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Lint
+      run: |
+        rustup add component clippy
+        cargo clippy --verbose
+    - name: Build
+      run: cargo build --verbose
+    - name: Test
+      run: cargo test --verbose
