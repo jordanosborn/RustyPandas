@@ -9,9 +9,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+    - name: Update Toolchain
+      run: |
+        rustup self update
+        rustup update
     - name: Lint
       run: |
-        rustup add component clippy
+        rustup component add clippy
         cargo clippy --all-targets --all-features -- -D warnings
     - name: Build
       run: cargo build --verbose
