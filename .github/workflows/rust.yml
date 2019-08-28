@@ -23,6 +23,7 @@ jobs:
       run: |
         rustup component add clippy
         cargo clippy --all-targets --all-features -- -D warnings
+        cargo fmt -- --check
     - name: Build
       run: cargo build --verbose
     - name: Test
