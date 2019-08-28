@@ -12,7 +12,7 @@ jobs:
     - name: Lint
       run: |
         rustup add component clippy
-        cargo clippy --verbose
+        cargo clippy --all-targets --all-features -- -D warnings
     - name: Build
       run: cargo build --verbose
     - name: Test
