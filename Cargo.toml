@@ -14,9 +14,9 @@ readme = "README.md"
 opt-level = 3
 
 [dependencies]
-nalgebra = "0.18.0"
+nalgebra = "0.18.1"
 rayon = "1.1.0"
-serde = "1.0.97"
+serde = "1.0.99"
 gnuplot = "0.0.31"
 itertools = "0.8.0"
 num = "0.2.0"
@@ -26,6 +26,7 @@ sqlite = "0.25.0"
 approx = "0.3.2"
 # 0.5.0 is broken on crates.io
 faster = {git="https://github.com/AdamNiederer/faster.git"}
-#actix? for web frontend?
+#actix? for web frontend? diesel num complex
 
 [dev-dependencies]
+cc = "1.0.41"
