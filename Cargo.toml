@@ -30,7 +30,7 @@ csv = "1.1.1"
 cute = "0.3.0"
 diesel = "1.4.2"
 # 0.5.0 is broken on crates.io
-faster = {git="https://github.com/AdamNiederer/faster.git"}
+#faster = {git="https://github.com/AdamNiederer/faster.git"}
 #actix? for web frontend? diesel num complex
 
 [build-dependencies]
