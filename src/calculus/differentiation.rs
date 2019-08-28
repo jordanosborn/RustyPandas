@@ -16,7 +16,6 @@ pub fn diff(f: &dyn Fn(&Vec<f64>) -> f64, position: &[f64], step: f64) -> Vector
     Vector { data: ret }
 }
 
-
 #[cfg(test)]
 mod tests {
     use super::*;

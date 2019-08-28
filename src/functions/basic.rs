@@ -1,4 +1,3 @@
-
 #[inline]
 pub fn sinc<T: num::Float>(x: T) -> T {
     if x.is_zero() {

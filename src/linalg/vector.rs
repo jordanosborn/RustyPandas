@@ -1,4 +1,3 @@
-
 use num::Zero;
 use rayon::prelude::*;
 #[derive(Debug)]
@@ -57,10 +56,8 @@ impl Vector {
                 data: self.data.iter().map(|a| a / norm).collect(),
             }
         }
-
     }
 }
-
 
 impl std::ops::Mul<Vector> for Vector {
     type Output = f64;
