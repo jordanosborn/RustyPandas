@@ -1,4 +1,4 @@
-use faster::*;
+//use faster::*;
 
 #[cfg(test)]
 mod tests {
