@@ -39,6 +39,7 @@ Will eventually contain most common mathematical utilities:
 1. Machine learning, deep learning
 1. Geometry
 1. Data scraping
+1. Financial mathematics
 1. Sets
 1. Groups
 1. Graphs
