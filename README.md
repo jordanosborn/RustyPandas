@@ -13,6 +13,8 @@ This package is not focused on performance however performance will not be sacri
 Add following to cargo.toml
 
     rusty_pandas = "0.0.1"
+    
+Requires GNU SL and GNU MP.
 
 ### In-Progress
 
