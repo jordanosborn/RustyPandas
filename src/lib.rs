@@ -7,8 +7,8 @@ pub mod constants;
 pub mod fitting;
 pub mod functions;
 pub mod linalg;
-pub mod statistics;
 pub mod series;
+pub mod statistics;
 pub mod types;
 
 #[macro_export]

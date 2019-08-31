@@ -1,5 +1,5 @@
 [package]
-name = "RustyPandas"
+name = "rusty_pandas"
 version = "0.0.1"
 authors = ["Jordan Osborn <jordanosborn0@gmail.com>"]
 edition = "2018"
@@ -11,15 +11,16 @@ repository = "https://github.com/jordanosborn/rustypandas"
 readme = "README.md"
 
 [profile.dev]
-opt-level = 3
+opt-level = 0
 
 [dependencies]
 nalgebra = "0.18.1"
+regex = "1.2.1"
 rayon = "1.2.0"
 serde = "1.0.99"
 gnuplot = "0.0.31"
 itertools = "0.8.0"
-gsl = "1.1.0"
+GSL = "1.1.0"
 num = "0.2.0"
 rand = "0.7.0"
 text_io = "0.1.7"
