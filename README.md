@@ -33,5 +33,6 @@ Will eventually contain most common mathematical utilities:
 1. GPU support
 1. Maths frontend
 1. etc.
-1. Full documentation and test suite
+1. Full documentation
+1. Benchmarking and test suite
 
