@@ -1,10 +1,9 @@
-# Rusty Pandas
+# Rusty Pandas - A general purpose mathematics library for Rust
 
 ![Logo](logo.jpg "Rusty Pandas")
 
 ## MIT License - 2019 Jordan Osborn
 
-A general purpose mathematics library for Rust.
 This package is not focused on performance however performance will not be sacrificed if possible. It is designed to be a self contained package, with a consistent and easy to use API. It should mainly find use during stages of exploratory mathematics.
 
 ## Very early stage of development
