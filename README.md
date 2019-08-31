@@ -1,8 +1,8 @@
 # Rusty Pandas - A general purpose mathematics library for Rust
 
-[![Actions Status](https://github.com/jordanosborn/rusty_pandas/workflows/rust/badge.svg)](https://github.com/jordanosborn/rusty_pandas/actions) ![Crates.io](https://img.shields.io/crates/d/rusty_pandas?logo=Rusty%20Pandas) ![Crates.io](https://img.shields.io/crates/l/rusty_pandas)
+[![Actions Status](https://github.com/jordanosborn/RustyPandas/.github/workflows/rust.yml/badge.svg)](https://github.com/jordanosborn/RustyPandas/actions) [![Crates.io](https://img.shields.io/crates/d/rusty_pandas?logo=Rusty%20Pandas)](https://crates.io/crates/rusty_pandas) [![docs.rs](https://img.shields.io/badge/Docs-docs.rs-orange)](https://docs.rs/crate/rusty_pandas) [![Crates.io](https://img.shields.io/crates/l/rusty_pandas)](https://github.com/jordanosborn/RustyPandas/blob/master/LICENSE)
 
-![Logo](logo.jpg "Rusty Pandas")
+<img src="logo.jpg" width="50%" height="50%" display="block" margin-left="auto" margin-right="auto">
 
 ## MIT License - 2019 Jordan Osborn
 
