@@ -1,6 +1,8 @@
 # Rusty Pandas
 
-##### MIT License - 2019 Jordan Osborn
+![Logo](./logo.png "Rusty Pandas")
+
+## MIT License - 2019 Jordan Osborn
 
 A general purpose mathematics library for Rust.
 This package is not focused on performance however performance will not be sacrificed if possible. It is designed to be a self contained package, with a consistent and easy to use API. It should mainly find use during stages of exploratory mathematics.
@@ -8,9 +10,11 @@ This package is not focused on performance however performance will not be sacri
 ## Very early stage of development
 
 ### In-Progress
+
 1. Data-Frames and series implementing the pandas api (as close as possible)
 
 ### Future
+
 Will eventually contain most common mathematical utilities:
 
 1. Fourier Transforms
@@ -35,4 +39,3 @@ Will eventually contain most common mathematical utilities:
 1. etc.
 1. Full documentation
 1. Benchmarking and test suite
-
