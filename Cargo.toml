@@ -14,6 +14,7 @@ readme = "README.md"
 opt-level = 0
 
 [dependencies]
+rust_decimal = "1.0.3"
 nalgebra = "0.18.1"
 regex = "1.2.1"
 rayon = "1.2.0"
@@ -32,6 +33,8 @@ csv = "1.1.1"
 cute = "0.3.0"
 diesel = "1.4.2"
 reqwest = "0.9.20"
+clap = "2.33.0"
+rug = "1.5.2"
 ndarray = { version = "0.12.1", features = ["blas", "serde-1"]}#"rayon"] }
 blas-src = { version = "0.3.0", default-features = false, features = ["openblas"] }
 openblas-src = { version = "0.6.1", default-features = false, features = ["cblas", "system"] }
