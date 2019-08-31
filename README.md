@@ -6,7 +6,7 @@
 
 ## MIT License - 2019 Jordan Osborn
 
-This package is not focused on performance however performance will not be sacrificed if possible. It is designed to be a self contained package, with a consistent and easy to use API. It should mainly find use during stages of exploratory mathematics.
+This package is not focused on performance however performance will not be sacrificed if possible. It is designed to be a self contained package, with a consistent and easy to use API. It should mainly find use during stages of exploratory mathematics. It amalgamates several popular rust libraries in to a consistent api.
 
 ## Very early stage of development
 
