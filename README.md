@@ -1,6 +1,6 @@
 # Rusty Pandas - A general purpose mathematics library for Rust
 
-![Crates.io](https://img.shields.io/crates/d/rusty_pandas?logo=Rusty%20Pandas) ![Crates.io](https://img.shields.io/crates/l/rusty_pandas)
+[![Actions Status](https://github.com/jordanosborn/rusty_pandas/workflows/rust/badge.svg)](https://github.com/jordanosborn/rusty_pandas/actions) ![Crates.io](https://img.shields.io/crates/d/rusty_pandas?logo=Rusty%20Pandas) ![Crates.io](https://img.shields.io/crates/l/rusty_pandas)
 
 ![Logo](logo.jpg "Rusty Pandas")
 
