@@ -1,5 +1,7 @@
 # Rusty Pandas - A general purpose mathematics library for Rust
 
+![Crates.io](https://img.shields.io/crates/d/rusty_pandas?logo=Rusty%20Pandas)
+
 ![Logo](logo.jpg "Rusty Pandas")
 
 ## MIT License - 2019 Jordan Osborn
