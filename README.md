@@ -7,15 +7,14 @@ This package is not focused on performance however performance will not be sacri
 
 ## Very early stage of development
 
-### Coming Soon
-Data-Frames and series implementing the pandas api (as close as possible)
+### In-Progress
+1. Data-Frames and series implementing the pandas api (as close as possible)
 
-
+### Future
 Will eventually contain most common mathematical utilities:
 
 1. Fourier Transforms
 1. Linear Algebra
-1. Data Frames
 1. Tensors
 1. Optimisation
 1. Curve fitting
@@ -34,3 +33,5 @@ Will eventually contain most common mathematical utilities:
 1. GPU support
 1. Maths frontend
 1. etc.
+1. Full documentation and test suite
+
