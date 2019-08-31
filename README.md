@@ -10,6 +10,10 @@ This package is not focused on performance however performance will not be sacri
 
 ## Very early stage of development
 
+Add following to cargo.toml
+
+    rusty_pandas = "0.0.1"
+
 ### In-Progress
 
 1. Data-Frames and series implementing the pandas api (as close as possible)
@@ -35,6 +39,11 @@ Will eventually contain most common mathematical utilities:
 1. Machine learning, deep learning
 1. Geometry
 1. Data scraping
+1. Sets
+1. Groups
+1. Graphs
+1. Probability
+1. Symbolic mathematics
 1. GPU support
 1. Maths frontend
 1. etc.
