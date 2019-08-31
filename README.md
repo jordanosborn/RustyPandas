@@ -1,13 +1,15 @@
-# mathpack
+# Rusty Pandas
 
 ##### MIT License - 2019 Jordan Osborn
-
-[![Build Status](https://travis-ci.com/jordanosborn/mathpack.svg?branch=master)](https://travis-ci.com/jordanosborn/mathpack)
 
 A general purpose mathematics library for Rust.
 This package is not focused on performance however performance will not be sacrificed if possible. It is designed to be a self contained package, with a consistent and easy to use API. It should mainly find use during stages of exploratory mathematics.
 
 ## Very early stage of development
+
+### Coming Soon
+Data-Frames and series implementing the pandas api (as close as possible)
+
 
 Will eventually contain most common mathematical utilities:
 
