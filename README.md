@@ -1,6 +1,6 @@
 # Rusty Pandas
 
-![Logo](./logo.png "Rusty Pandas")
+![Logo](logo.jpg "Rusty Pandas")
 
 ## MIT License - 2019 Jordan Osborn
 
