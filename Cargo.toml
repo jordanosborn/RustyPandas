@@ -30,6 +30,9 @@ csv = "1.1.1"
 cute = "0.3.0"
 diesel = "1.4.2"
 reqwest = "0.9.20"
+ndarray = { version = "0.12.1", features = ["blas", "serde-1", "rayon"] }
+blas-src = { version = "0.2.0", default-features = false, features = ["openblas"] }
+openblas-src = { version = "0.6.0", default-features = false, features = ["cblas", "system"] }
 chrono = { version = "0.4.7", features = ["serde"] }
 # 0.5.0 is broken on crates.io
 #faster = {git="https://github.com/AdamNiederer/faster.git"}
