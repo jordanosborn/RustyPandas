@@ -1,13 +1,17 @@
 #![allow(unused_macros, unused_imports)]
 //#![feature(const_generics)]
 #![deny(clippy::all, clippy::pedantic)]
+#![allow(clippy::use_self)]
 
+pub mod array;
 pub mod calculus;
 pub mod constants;
 pub mod fitting;
 pub mod functions;
+pub mod indexer;
 pub mod linalg;
 pub mod series;
+pub mod dataframe;
 pub mod statistics;
 pub mod types;
 

@@ -1,6 +1,6 @@
 [package]
 name = "rusty_pandas"
-version = "0.0.1"
+version = "0.0.2"
 authors = ["Jordan Osborn <jordanosborn0@gmail.com>"]
 edition = "2018"
 license = "MIT"
