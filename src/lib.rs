@@ -6,12 +6,12 @@
 pub mod array;
 pub mod calculus;
 pub mod constants;
+pub mod dataframe;
 pub mod fitting;
 pub mod functions;
 pub mod indexer;
 pub mod linalg;
 pub mod series;
-pub mod dataframe;
 pub mod statistics;
 pub mod types;
 
