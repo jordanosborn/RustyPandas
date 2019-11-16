@@ -121,4 +121,11 @@ mod tests {
         let d2 = Dual::new(5.0, 3.0);
         assert_eq![d1 * d2, Dual::new(20.0, 17.0)]
     }
+
+    #[test]
+    fn sub() {
+        let d1 = Dual::new(4.0, 1.0);
+        let d2 = Dual::new(5.0, 3.0);
+        assert_eq![d2 - d1, Dual::new(1.0, 2.0)]
+    }
 }
