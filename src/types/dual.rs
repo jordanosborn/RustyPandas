@@ -1,5 +1,5 @@
 #![allow(dead_code)]
-use num::{Num, Float};
+use num::{Float, Num};
 
 #[derive(PartialEq, Eq, Copy, Clone, Debug)]
 pub struct Dual<T: Num + Copy> {
@@ -16,20 +16,22 @@ impl<T: Num + Copy> Dual<T> {
 impl<T: Float + Copy> Dual<T> {
     fn sin(self) -> Self {
         Self {
-            a: self.a.sin(), b: self.b.cos()
+            a: self.a.sin(),
+            b: self.b.cos(),
         }
     }
 
     fn cos(self) -> Self {
         Self {
-            a: self.a.cos(), b: -self.b.sin()
+            a: self.a.cos(),
+            b: -self.b.sin(),
         }
     }
 
     fn tan(self) -> Self {
         Self {
             a: self.a.tan(),
-            b: self.b.cos().powf(T::from(-2.0_f64).unwrap())
+            b: self.b.cos().powf(T::from(-2.0_f64).unwrap()),
         }
     }
 }
@@ -108,6 +110,7 @@ impl<T: Num + Copy + std::ops::Neg<Output = T>> std::ops::Div for Dual<T> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn add() {
         let d1 = Dual::new(34.0, 1.0);
