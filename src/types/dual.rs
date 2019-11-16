@@ -1,5 +1,5 @@
 #![allow(dead_code)]
-use num::Num;
+use num::{Num, Float};
 
 #[derive(PartialEq, Eq, Copy, Clone, Debug)]
 pub struct Dual<T: Num + Copy> {
@@ -10,6 +10,27 @@ pub struct Dual<T: Num + Copy> {
 impl<T: Num + Copy> Dual<T> {
     fn new(a: T, b: T) -> Self {
         Self { a, b }
+    }
+}
+
+impl<T: Float + Copy> Dual<T> {
+    fn sin(self) -> Self {
+        Self {
+            a: self.a.sin(), b: self.b.cos()
+        }
+    }
+
+    fn cos(self) -> Self {
+        Self {
+            a: self.a.cos(), b: -self.b.sin()
+        }
+    }
+
+    fn tan(self) -> Self {
+        Self {
+            a: self.a.tan(),
+            b: self.b.cos().powf(T::from(-2.0_f64).unwrap())
+        }
     }
 }
 
