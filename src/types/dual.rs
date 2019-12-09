@@ -7,6 +7,20 @@ pub struct Dual<T: Num + Copy> {
     pub b: T,
 }
 
+impl<T: Num + Copy + std::ops::Neg> std::fmt::Display for Dual<T> 
+where T: std::fmt::Display + PartialOrd,
+    <T as std::ops::Neg>::Output: std::fmt::Display {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(
+            f, "{} {}e", self.a, if self.b < T::zero() {
+                format!["- {}", -self.b]
+            } else {
+                format!["+ {}", self.b]
+            }
+        )
+    }
+}
+
 impl<T: Num + Copy> Dual<T> {
     fn new(a: T, b: T) -> Self {
         Self { a, b }
@@ -17,21 +31,21 @@ impl<T: Float + Copy> Dual<T> {
     fn sin(self) -> Self {
         Self {
             a: self.a.sin(),
-            b: self.b.cos(),
+            b: self.b * self.a.cos(),
         }
     }
 
     fn cos(self) -> Self {
         Self {
             a: self.a.cos(),
-            b: -self.b.sin(),
+            b: -self.b * self.a.sin(),
         }
     }
 
     fn tan(self) -> Self {
         Self {
             a: self.a.tan(),
-            b: self.b.cos().powf(T::from(-2.0_f64).unwrap()),
+            b: self.b * self.a.cos().powf(T::from(-2.0_f64).unwrap()),
         }
     }
 }
@@ -126,9 +140,30 @@ mod tests {
     }
 
     #[test]
+    fn vector_func() {
+        fn cos_x_y(x: Dual<f64>, y: Dual<f64>) -> Dual<f64> {
+            (x * y).cos()
+        }
+
+        fn dcos_x_y_dy(x: f64, y: f64) -> f64 {
+            - x * (x * y).sin()
+        }
+
+        let d1 = Dual::new(5.0, 0.0);
+        let d2 = Dual::new(2.0, 1.0);
+        let d3 = cos_x_y(d1, d2);
+        assert![(d3.b - dcos_x_y_dy(d1.a, d2.a)).abs() < 1e-5_f64]
+    }
+
+    #[test]
     fn sub() {
         let d1 = Dual::new(4.0, 1.0);
         let d2 = Dual::new(5.0, 3.0);
         assert_eq![d2 - d1, Dual::new(1.0, 2.0)]
+    }
+
+    #[test]
+    fn display() {
+        println!["{}", Dual::new(67.0, -89.0)]
     }
 }
